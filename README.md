@@ -1,50 +1,74 @@
-# T2T-indian-Languages
-- # HTML (index.html):
+# 🏛️ Anubhash AI: Premium Universal Indian Language Translator & Dictionary
 
-The HTML structure includes standard tags like <html>, <head>, <body>, and various others.
-- Meta tags define the character set, viewport settings, and compatibility.
-- External scripts from the Ionicons library (version 5.5.2) are included for displaying icons.
-- A link to an external CSS file (style.css) is included for styling.
-- The body contains a header, a slideshow, a main container for translation input and output, and a footer.
-- JavaScript files (languages.js and script.js) are included at the end of the body.
+**Anubhash AI (अनुभाष)** is a state-of-the-art, heritage-minimalist web application that bridges 24 classical and regional Indian languages with modern neural artificial intelligence. Designed with a luxury Rajput aesthetic—featuring Saffron Brown (`#a65b26`) and Royal Gold (`#cba153`) highlights—it delivers a breathtaking, highly responsive user interface with advanced linguistic utilities.
 
-- # JavaScript (script.js):
-1.Dropdown Handling:
+---
 
-- The script handles dropdowns, populating them with language options and toggling their visibility.
-- It uses the fetch API to retrieve language data and populates the dropdown menus.
+## 🌟 Key Features
 
-2.Language Swapping:
+### 1. 📖 Bilingual AI Dictionary
+- **Oxford API Side-by-Side Integration**: Displays precise definitions, grammatical parts of speech, phonetics, audio pronunciations, synonyms, and contextual examples simultaneously in both English and Hindi.
+- **Transliteration Engine (Romanized Hindi Search)**: Powered by Google Input Tools API. Type Hindi words phonetically in Latin script (e.g., `ghosla`, `pyaar`, `dosti`, `hawa`) to automatically transliterate to Devanagari script (`घोंसला`, `प्यार`, `दोस्ती`, `हवा`) and fetch their definitions.
+- **Article Cleansing**: Advanced text parser strips leading English articles (e.g., `the sky` $\rightarrow$ `sky`) to guarantee a 100% dictionary API lookup resolution rate.
+- **Multi-Language Expansion**: Translate English/Hindi definitions instantly into 8 other regional Indian languages (Tamil, Telugu, Sanskrit, Bengali, Marathi, Gujarati, Malayalam, Kannada, Urdu).
 
-- The script allows users to swap input and output languages.
+### 2. 🎤 Unified Conversational Voice Lounge
+- **Speech-to-Text & Text-to-Speech**: Speak freely and listen to high-fidelity audio readouts in native accents.
+- **Concurrency Protection**: Implements a unified microphone state lock controller (`activeMicMode`), preventing browser SpeechRecognition overlaps and locking issues on iOS and Android viewports.
 
-3.Translation:
+### 3. 📸 Laser OCR Camera Scanner
+- **Manuscript Text Scanning**: Mock viewfinder featuring live glowing corner ornaments, a moving neon scanning laser animation, and a responsive shutter flash.
+- **Auto-Extraction**: Instantly parses and translates classical manuscript text from Sanskrit or Hindi into English.
 
-- It fetches translation data from the Google Translate API based on user input.
-- The translation response is processed, and the translated text is displayed.
+### 4. 🧭 Heritage Rajput Minimalism UX
+- **Stationary Glassmorphic Header**: The main header remains perfectly fixed at the top of the viewport on both desktop and mobile screens, featuring backdrop blurs and clean content scrolling offsets.
+- **Manuscript Sheet Cards**: Content is framed within custom-border parchment panels featuring traditional corner ornaments.
+- **Local Cache-Buster Integration**: Standardized query parameters (e.g. `style.css?v=4.1`) prevent aggressive local browser stylesheet caching.
 
-4.Character Limit and Count:
+---
 
-- It limits the input text to 5000 characters and displays the character count.
+## 🛠️ Architecture & Tech Stack
 
-5.Slideshow:
+Anubhash AI is built with performance-first, native vanilla technologies—eliminating modern framework bloat for maximum accessibility:
+- **Core Structure**: HTML5 (semantic layout architecture)
+- **Styling & Theming**: Vanilla CSS3 (curated Rajput HSL palette, CSS Custom Properties, and responsive flex/grid layouts)
+- **Application Logic**: Vanilla ES6+ JavaScript
+- **Iconography**: Premium IonIcons library
 
-- The script sets up a slideshow with images changing every 5 seconds.
+---
 
-6.Event Listeners:
+## 📂 Project Structure
 
-- Various event listeners are used for user interactions, such as clicking dropdowns, swapping languages, and input changes.
+```
+├── index.html          # Main application structure & screen viewports
+├── style.css           # Global typography, manuscript frames, fixed header, and responsive rules
+├── script.js          # Core routing, Speech, Dictionary engine, and multi-stage fallbacks
+├── languages.js        # Static metadata catalog for 24 Indian languages
+└── README.md           # Project documentation
+```
 
-- # CSS (style.css):
-- The CSS file contains styling rules for the entire web application.
-- It defines custom properties (--primary-color, --bg-color, etc.) for consistent theming.
-- Styling rules are applied to create a responsive layout, design cards, dropdowns, buttons, and other UI components.
-- Media queries are used for responsive design, adjusting the layout for smaller screens.
+---
 
-# Additional Notes:
-- The Google Translate API is used for language translation. Note: The Google Translate API requires an API key, which is not included in the provided code.
-- The slideshow is created using JavaScript and CSS.
-- The application supports 24 Indian languages, as mentioned in the footer.
+## 🚀 Local Development
 
+To run Anubhash AI locally:
+1. Clone this repository to your local machine.
+2. Launch a lightweight local server from the root directory (e.g., using `http-server`):
+   ```bash
+   npx http-server ./ -p 8090 -o
+   ```
+3. Open `http://localhost:8090` in your web browser.
 
-It's important to mention that using the Google Translate API for translation purposes may require adherence to Google's terms of service, and obtaining an API key may involve additional steps. Additionally, the provided code may require modification or adaptation based on the specific requirements and dependencies of the project.
+---
+
+## 🎨 Design Systems & Palette
+
+- **Warm Beige Background**: `#f6f3eb`
+- **Soft Cream Sheets**: `#fffdf9`
+- **Saffron Brown Accent**: `#a65b26`
+- **Royal Gold Details**: `#cba153`
+- **Typographic Scale**: *Cinzel* for luxury headers, *Tiro Devanagari Hindi* for Indic scripts, and *Poppins* for smooth, readable body text.
+
+---
+
+Designed & Developed by **Saransh Chaudhary**
