@@ -5,90 +5,610 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- IonIcons for high-quality premium icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Language Translater | Saransh Chaudhary</title>
+    <!-- Cultural Typography System: Tiro Devanagari Hindi, Cinzel Luxury, Poppins Sans-Serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Cinzel:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=4.1" />
+    <!-- Brand Planet Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23a65b26'/%3E%3Cellipse cx='16' cy='16' rx='12' ry='4.5' fill='none' stroke='%23a65b26' stroke-width='2.5' transform='rotate(-30 16 16)'/%3E%3C/svg%3E" />
+    <title>Anubhash AI | Premium Universal Indian Language Translator</title>
 </head>
 
 <body>
+    <!-- 🏛️ Breathing Traditional Gold Mandala Watermark Backdrop -->
+    <div class="mandala-backdrop">
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="var(--gold-accent)" stroke-width="0.3" stroke-dasharray="1 3"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--gold-accent)" stroke-width="0.5" opacity="0.6"/>
+            <g stroke="var(--gold-accent)" stroke-width="0.4" fill="none" opacity="0.8">
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(0 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(30 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(60 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(90 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(120 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(150 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(180 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(210 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(240 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(270 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(300 100 100)"/>
+                <path d="M 100,25 C 105,40 95,40 100,55 C 105,40 95,40 100,25 Z" transform="rotate(330 100 100)"/>
+            </g>
+            <polygon points="100,60 112,100 100,140 88,100" fill="none" stroke="var(--gold-accent)" stroke-width="0.3" opacity="0.5"/>
+            <polygon points="60,100 100,112 140,100 100,88" fill="none" stroke="var(--gold-accent)" stroke-width="0.3" opacity="0.5"/>
+        </svg>
+    </div>
 
-    <div class="slideshow-container">
-        <div class="slideshow-container">
-            <div class="mySlides" style="background-image: url('images/ram.webp');"></div>
-            <div class="mySlides" style="background-image: url('images/bhav.jpg');"></div>
-            <div class="mySlides" style="background-image: url('images/gate.avif');"></div>
-            <div class="mySlides" style="background-image: url('images/red.jpg');"></div>
-            
-        </div>
+    <!-- ==========================================
+       DASHBOARD PC VIEW (GLOBAL WORKSPACE)
+       ========================================== -->
+    <div class="pc-layout-wrapper">
+        <!-- Mobile Sidebar dim backdrop overlay -->
+        <div class="sidebar-overlay" id="pc-sidebar-overlay"></div>
         
-    </div>
+        <!-- 1. LEFT SIDEBAR MENU -->
+        <aside class="sidebar">
+            <div class="brand">
+                <ion-icon name="planet" class="brand-logo"></ion-icon>
+                <div class="brand-text">
+                    <h2 data-translate-key="brand_devanagari">अनुभाष</h2>
+                    <span data-translate-key="brand_sub">AI Translator</span>
+                </div>
+                <button class="sidebar-close-btn" id="pc-sidebar-close-btn" title="Close Sidebar">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
 
-    <header>
-        <h1>अनुभाषा <img src="images/logo.png"></img>
-        </h1>
-        <h3> भारतीय भाषा अनुवादक
-        </h3>
+            <!-- Sidebar Nav Links -->
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-link active" data-target="screen-home"><ion-icon name="home-outline"></ion-icon> <span data-translate-key="nav_home">Home</span></a>
+                <a href="#" class="nav-link" data-target="screen-translate"><ion-icon name="globe-outline"></ion-icon> <span data-translate-key="nav_translate">Translate AI</span></a>
+                <a href="#" class="nav-link" data-target="screen-voice-chat"><ion-icon name="mic-outline"></ion-icon> <span data-translate-key="nav_voice">Voice Chat</span></a>
+                <a href="#" class="nav-link" data-target="screen-camera"><ion-icon name="camera-outline"></ion-icon> <span data-translate-key="nav_camera">Camera Translate</span></a>
+                <a href="#" class="nav-link" data-target="screen-dictionary"><ion-icon name="book-outline"></ion-icon> <span data-translate-key="nav_dictionary">Dictionary</span></a>
+                <a href="#" class="nav-link" data-target="screen-contact"><ion-icon name="person-circle-outline"></ion-icon> <span data-translate-key="nav_contact">Contact Developer</span></a>
+            </nav>
 
-        <p>
-            A complete text to text translator
-        </p>
-    </header>
+            <!-- Sidebar Footer Credit -->
+            <div class="sidebar-credit">
+                <span>Developed by <strong>Saransh Chaudhary</strong></span>
+            </div>
+        </aside>
 
-    <div class="container">
-        <div class="card input-wrapper">
-            <div class="from">
-                <span class="heading">From :</span>
-                <div class="dropdown-container" id="input-language">
-                    <div class="dropdown-toggle">
-                        <ion-icon name="globe-outline"></ion-icon>
-                        <span class="selected" data-value="auto">Auto Detect</span>
-                        <ion-icon name="chevron-down-outline"></ion-icon>
+        <!-- 2. MAIN PC CONTENT PANEL -->
+        <main class="main-content">
+            
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="burger-menu-btn" id="pc-burger-btn" title="Open Menu">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </button>
+                    <div class="header-brand">
+                        <ion-icon name="planet" class="brand-logo"></ion-icon>
+                        <div class="brand-text">
+                            <h2 data-translate-key="brand_devanagari">अनुभाष</h2>
+                            <span data-translate-key="brand_sub">AI Translator</span>
+                        </div>
                     </div>
-                    <ul class="dropdown-menu">
-                        <li class="option active">DropDown Menu Item 1</li>
-                        <li class="option">DropDown Menu Item 2</li>
-                    </ul>
+                </div>
+                <div class="header-actions">
+                    <div class="global-lang-picker">
+                        <ion-icon name="globe-outline"></ion-icon>
+                        <select id="pc-global-ui-lang">
+                            <option value="en" selected>English (US)</option>
+                            <option value="hi">हिन्दी (Hindi)</option>
+                            <option value="ta">தமிழ் (Tamil)</option>
+                            <option value="te">తెలుగు (Telugu)</option>
+                            <option value="bn">বাংলা (Bengali)</option>
+                            <option value="mr">मराठी (Marathi)</option>
+                            <option value="gu">ગુજરાતી (Gujarati)</option>
+                            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                            <option value="ml">മലയാളം (Malayalam)</option>
+                            <option value="ur">اردو (Urdu)</option>
+                            <option value="sa">संस्कृतम् (Sanskrit)</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ==========================================
+               SCREEN 1: HOME (WELCOME HERO & PORTAL)
+               ========================================== -->
+            <div class="app-screen active" id="screen-home">
+                <div class="home-hero manuscript-card">
+                    <div class="corner-ornaments">
+                        <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                    </div>
+                    <div class="home-brand">
+                        <ion-icon name="planet" class="brand-logo-huge"></ion-icon>
+                        <div class="brand-text">
+                            <h1 data-translate-key="brand_devanagari">अनुभाष</h1>
+                            <span data-translate-key="brand_sub">AI Translator</span>
+                        </div>
+                    </div>
+                    <h2 class="welcome-heading">Welcome to Anubhash AI Translator</h2>
+                    <h3 class="welcome-heading-hindi">अनुभाष एआई अनुवादक में आपका स्वागत है</h3>
+                    <p class="welcome-subtext">A premium companion bridging 24 classical Indian languages with luxury minimalism and modern neural intelligence.</p>
+                </div>
+
+                <!-- Traditional Portal Grid Cards -->
+                <div class="portal-grid">
+                    <!-- Card 1: Translate AI -->
+                    <div class="portal-card manuscript-card" onclick="navigateToScreen('screen-translate')">
+                        <div class="corner-ornaments">
+                            <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        </div>
+                        <ion-icon name="globe-outline" class="portal-icon"></ion-icon>
+                        <h3>Translate AI</h3>
+                        <p>Strict side-by-side text-to-text translator desk.</p>
+                        <button class="portal-btn">Open Translator <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                    </div>
+
+                    <!-- Card 2: Voice Chat -->
+                    <div class="portal-card manuscript-card" onclick="navigateToScreen('screen-voice-chat')">
+                        <div class="corner-ornaments">
+                            <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        </div>
+                        <ion-icon name="mic-outline" class="portal-icon"></ion-icon>
+                        <h3>Voice Chat</h3>
+                        <p>Speech-to-text and text-to-speech conversational lounge.</p>
+                        <button class="portal-btn">Start Listening <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                    </div>
+
+                    <!-- Card 3: Camera Translate -->
+                    <div class="portal-card manuscript-card" onclick="navigateToScreen('screen-camera')">
+                        <div class="corner-ornaments">
+                            <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        </div>
+                        <ion-icon name="camera-outline" class="portal-icon"></ion-icon>
+                        <h3>Camera Translate</h3>
+                        <p>Snap and translate text using advanced OCR laser scanning.</p>
+                        <button class="portal-btn">Open Scanner <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                    </div>
+
+                    <!-- Card 4: Dictionary -->
+                    <div class="portal-card manuscript-card" onclick="navigateToScreen('screen-dictionary')">
+                        <div class="corner-ornaments">
+                            <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        </div>
+                        <ion-icon name="book-outline" class="portal-icon"></ion-icon>
+                        <h3>AI Dictionary</h3>
+                        <p>Search meanings side-by-side in Hindi and English instantly.</p>
+                        <button class="portal-btn">Open Dictionary <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                    </div>
+                </div>
+
+                <!-- Premium Creator Credits -->
+                <div class="home-credit-banner manuscript-card">
+                    <div class="corner-ornaments">
+                        <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="12" height="12"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="12" height="12"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="12" height="12"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="12" height="12"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                    </div>
+                    <p class="credit-text">Designed &amp; Developed by <strong>Saransh Chaudhary</strong></p>
                 </div>
             </div>
-            <div class="text-area">
-                <textarea id="input-text" cols="30" rows="10" placeholder="Enter your text here"></textarea>
-                <div class="chars"><span id="input-chars">0</span> / 5000</div>
-            </div>
 
-        </div>
+            <!-- ==========================================
+               SCREEN 2: TRANSLATE AI (PURE TEXT TRANSLATOR ONLY)
+               ========================================== -->
+            <div class="app-screen" id="screen-translate">
+                <section class="translator-row">
+                    <!-- Left Source Card (Manuscript Card) -->
+                    <div class="pc-translator-card source-card manuscript-card">
+                        <!-- Corner Botanical Ornaments -->
+                        <div class="corner-ornaments">
+                            <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        </div>
 
-        <div class="center">
-            <div class="swap-position">
-                <ion-icon name="swap-horizontal-outline"></ion-icon>
-            </div>
-        </div>
-
-        <div class="card output-wrapper">
-            <div class="to">
-                <span class="heading">To :</span>
-                <div class="dropdown-container" id="output-language">
-                    <div class="dropdown-toggle">
-                        <ion-icon name="globe-outline"></ion-icon>
-                        <span class="selected" data-value="hi">Hindi</span>
-                        <ion-icon name="chevron-down-outline"></ion-icon>
+                        <div class="card-header">
+                            <span class="label" data-translate-key="card_from">From</span>
+                            <div class="pc-dropdown-container" id="pc-input-language">
+                                <div class="pc-dropdown-toggle">
+                                    <ion-icon name="globe-outline"></ion-icon>
+                                    <span class="selected" data-value="auto">Auto Detect</span>
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+                                </div>
+                                <ul class="pc-dropdown-menu"></ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="pc-input-text" placeholder="Enter your text here..." data-translate-placeholder="input_placeholder" rows="8"></textarea>
+                        </div>
+                        <div class="card-footer">
+                            <button class="footer-icon-btn" id="pc-mic-btn" title="Voice Input"><ion-icon name="mic-outline"></ion-icon></button>
+                            <span class="char-count"><span id="pc-input-chars">0</span> / 5000</span>
+                        </div>
                     </div>
-                    <ul class="dropdown-menu">
-                        <li class="option active">DropDown Menu Item 1</li>
-                        <li class="option">DropDown Menu Item 2</li>
-                    </ul>
+
+                    <!-- Swap Button Circle -->
+                    <div class="swap-action-center">
+                        <button class="swap-btn-circular" id="pc-btn-swap">
+                            <ion-icon name="swap-horizontal-outline"></ion-icon>
+                        </button>
+                    </div>
+
+                    <!-- Right Target Card (Manuscript Card) -->
+                    <div class="pc-translator-card target-card manuscript-card">
+                        <!-- Corner Botanical Ornaments -->
+                        <div class="corner-ornaments">
+                            <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        </div>
+
+                        <div class="card-header">
+                            <span class="label" data-translate-key="card_to">To</span>
+                            <div class="pc-dropdown-container" id="pc-output-language">
+                                <div class="pc-dropdown-toggle">
+                                    <ion-icon name="globe-outline"></ion-icon>
+                                    <span class="selected" data-value="hi">Hindi</span>
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+                                </div>
+                                <ul class="pc-dropdown-menu"></ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <textarea id="pc-output-text" placeholder="Translated text will appear here..." data-translate-placeholder="output_placeholder" readonly rows="8"></textarea>
+                        </div>
+                        <div class="card-footer">
+                            <div class="footer-left-icons">
+                                <button class="footer-icon-btn" id="pc-btn-copy" title="Copy Text"><ion-icon name="copy-outline"></ion-icon></button>
+                                <button class="footer-icon-btn" id="pc-btn-speak" title="Listen Translation"><ion-icon name="volume-high-outline"></ion-icon></button>
+                                <button class="footer-icon-btn" id="pc-btn-share" title="Share Translation"><ion-icon name="share-social-outline"></ion-icon></button>
+                            </div>
+                            <span class="char-count"><span id="pc-output-chars">0</span> / 5000</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ==========================================
+               SCREEN 3: VOICE CHAT (SPEECH-TO-TEXT DIALOGUE)
+               ========================================== -->
+            <div class="app-screen" id="screen-voice-chat">
+                <div class="voice-chat-container manuscript-card">
+                    <div class="corner-ornaments">
+                        <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                    </div>
+
+                    <div class="card-header">
+                        <span class="label">Voice Conversation Lounge</span>
+                        <div class="voice-lang-pickers">
+                            <div class="pc-dropdown-container" id="voice-input-language">
+                                <div class="pc-dropdown-toggle">
+                                    <ion-icon name="mic-outline"></ion-icon>
+                                    <span class="selected" data-value="en">English</span>
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+                                </div>
+                                <ul class="pc-dropdown-menu"></ul>
+                            </div>
+                            <ion-icon name="swap-horizontal-outline" class="voice-swap-icon"></ion-icon>
+                            <div class="pc-dropdown-container" id="voice-output-language">
+                                <div class="pc-dropdown-toggle">
+                                    <ion-icon name="volume-high-outline"></ion-icon>
+                                    <span class="selected" data-value="hi">Hindi</span>
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+                                </div>
+                                <ul class="pc-dropdown-menu"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conversation Transcript Log -->
+                    <div class="voice-transcript-log" id="voice-chat-transcript">
+                        <div class="chat-bubble source-bubble">
+                            <div class="bubble-meta">English</div>
+                            <p class="bubble-text">Hello, how are you today?</p>
+                        </div>
+                        <div class="chat-bubble target-bubble">
+                            <div class="bubble-meta">Hindi</div>
+                            <p class="bubble-text">नमस्ते, आज आप कैसे हैं?</p>
+                            <button class="bubble-speak-btn" onclick="speakTextOut('नमस्ते, आज आप कैसे हैं?', 'hi')"><ion-icon name="volume-high-outline"></ion-icon></button>
+                        </div>
+                    </div>
+
+                    <!-- Audio waveform and microphones -->
+                    <div class="voice-chat-controls">
+                        <div class="pulse-wave-wrapper">
+                            <div class="wave-circle ring-1"></div>
+                            <div class="wave-circle ring-2"></div>
+                            <button class="voice-mic-trigger" id="voice-chat-mic-btn">
+                                <ion-icon name="mic-outline"></ion-icon>
+                            </button>
+                        </div>
+                        <p class="voice-status-text" id="voice-status">Tap microphone to speak</p>
+                    </div>
                 </div>
             </div>
-            <textarea id="output-text" cols="30" rows="10" placeholder="Translated text will appear here" disabled></textarea>
 
-        </div>
-    </div>
-    <footer>
-        <h1>Supporting 24 Indian Languages</h1>
-        <div class="language-grid">
-            <p>Hindi, English, Urdu, Assamese, Bengali, Gujarati, Kannada, Malayalam, Marathi, Nepali, Oriya, Punjabi, Sanskrit, Sindhi, Tamil, Telugu, Konkani, Dogri, Kashmiri, Maithili, Manipuri (Meitei), Santali, Bodo, Santhali</p>
-        </div>
-    </footer>
+            <!-- ==========================================
+               SCREEN 4: CAMERA TRANSLATOR (OCR SCAN DIRECT)
+               ========================================== -->
+            <div class="app-screen" id="screen-camera">
+                <div class="camera-screen-layout">
+                    <!-- Embedded Viewfinder Mock -->
+                    <div class="camera-viewfinder-embedded manuscript-card">
+                        <div class="viewfinder-corner top-left"></div>
+                        <div class="viewfinder-corner top-right"></div>
+                        <div class="viewfinder-corner bottom-left"></div>
+                        <div class="viewfinder-corner bottom-right"></div>
+                        <div class="scanning-laser"></div>
+                        
+                        <div class="camera-embedded-overlay">
+                            <ion-icon name="camera" class="embedded-cam-icon"></ion-icon>
+                            <p>Point camera at manuscript / text lines</p>
+                        </div>
+                        
+                        <button class="capture-trigger-btn" id="btn-camera-screen-capture">
+                            <div class="capture-inner"></div>
+                        </button>
+                    </div>
+
+                    <!-- Extracted Translation Card -->
+                    <div class="camera-result-card manuscript-card">
+                        <div class="corner-ornaments">
+                            <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        </div>
+                        <div class="card-header">
+                            <span class="label">Extracted OCR Scan</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="result-block">
+                                <strong class="result-label" id="camera-lbl-src">Sanskrit (Source):</strong>
+                                <p class="result-text" id="camera-screen-extracted-text">भारतीय संविधान भारत का सर्वोच्च विधान है।</p>
+                            </div>
+                            <div class="result-block divider-top">
+                                <strong class="result-label" id="camera-lbl-tgt">English (Translation):</strong>
+                                <p class="result-text" id="camera-screen-translated-text">The Constitution of India is the supreme law of India.</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="footer-icon-btn" id="btn-camera-speak" title="Listen"><ion-icon name="volume-high-outline"></ion-icon></button>
+                            <button class="footer-icon-btn" id="btn-camera-copy" title="Copy"><ion-icon name="copy-outline"></ion-icon></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================
+               SCREEN 5: LANGUAGES (24 INDIAN LANGUAGES GRID)
+               ========================================== -->
+            <!-- ==========================================
+               SCREEN 5: DICTIONARY (BILINGUAL DICTIONARY VIEW)
+               ========================================== -->
+            <div class="app-screen" id="screen-dictionary">
+                <div class="dictionary-screen-header manuscript-card">
+                    <div class="corner-ornaments">
+                        <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="16" height="16"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                    </div>
+                    <h3>Anubhash Bilingual AI Dictionary</h3>
+                    <p>Dynamic Oxford definitions with side-by-side English and Hindi translations.</p>
+                    <div class="lang-search-wrapper">
+                        <ion-icon name="search-outline"></ion-icon>
+                        <input type="text" id="dictionary-search-input" placeholder="Type a word (English or Hindi)..." />
+                        <button class="dict-search-btn-trigger" id="btn-dict-search-submit"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                    </div>
+                </div>
+
+                <div class="dictionary-results-container manuscript-card" id="dictionary-results-card">
+                    <div class="corner-ornaments">
+                        <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                    </div>
+
+                    <!-- Search Result View -->
+                    <div class="dictionary-columns">
+                        <!-- Left Column: English Meaning -->
+                        <div class="def-column english-def" id="dict-col-english">
+                            <!-- Populated dynamically -->
+                        </div>
+                        
+                        <!-- Right Column: Hindi Meaning -->
+                        <div class="def-column hindi-def" id="dict-col-hindi">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Bottom translation expansion options -->
+                    <div class="dictionary-translate-layer">
+                        <ion-icon name="language-outline"></ion-icon>
+                        <span>See meaning in other languages:</span>
+                        <select id="dict-other-lang-selector">
+                            <option value="" disabled selected>Select an Indian Language...</option>
+                            <option value="ta">தமிழ் (Tamil)</option>
+                            <option value="te">తెలుగు (Telugu)</option>
+                            <option value="bn">বাংলা (Bengali)</option>
+                            <option value="mr">मराठी (Marathi)</option>
+                            <option value="gu">ગુજરાતી (Gujarati)</option>
+                            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                            <option value="ml">മലയാളം (Malayalam)</option>
+                            <option value="ur">اردو (Urdu)</option>
+                            <option value="sa">संस्कृतम् (Sanskrit)</option>
+                        </select>
+                        <div class="dict-multilang-result-box hidden" id="dict-multilang-result">
+                            <strong id="dict-multilang-title">Sanskrit Translation:</strong>
+                            <p id="dict-multilang-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================
+               SCREEN 6: CONTACT DEVELOPER
+               ========================================== -->
+            <div class="app-screen" id="screen-contact">
+                <div class="contact-card manuscript-card">
+                    <div class="corner-ornaments">
+                        <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                        <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="22" height="22"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                    </div>
+
+                    <div class="contact-header">
+                        <div class="developer-avatar-wrapper">
+                            <div class="developer-avatar">
+                                <ion-icon name="planet" class="avatar-icon"></ion-icon>
+                            </div>
+                        </div>
+                        <h2 class="developer-name">Saransh Chaudhary</h2>
+                        <span class="developer-title">Lead Architect & Designer</span>
+                        <p class="developer-bio">Crafting the future of universal Indian language translation through neural artificial intelligence and royal heritage minimalist design.</p>
+                    </div>
+
+                    <div class="contact-grid">
+                        <!-- Portfolio -->
+                        <div class="contact-item-card manuscript-card">
+                            <div class="corner-ornaments">
+                                <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            </div>
+                            <div class="contact-icon-wrapper">
+                                <ion-icon name="globe-outline"></ion-icon>
+                            </div>
+                            <div class="contact-details">
+                                <h3>My Portfolio</h3>
+                                <p>Personal showcase &amp; creative works</p>
+                            </div>
+                            <a href="http://saranshchaudhary.vercel.app/" target="_blank" class="contact-action-btn">
+                                <span>Visit</span>
+                                <ion-icon name="open-outline"></ion-icon>
+                            </a>
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="contact-item-card manuscript-card">
+                            <div class="corner-ornaments">
+                                <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            </div>
+                            <div class="contact-icon-wrapper">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <p>Professional network &amp; credentials</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/saranshchaudhary17/" target="_blank" class="contact-action-btn">
+                                <span>Connect</span>
+                                <ion-icon name="open-outline"></ion-icon>
+                            </a>
+                        </div>
+
+                        <!-- GitHub -->
+                        <div class="contact-item-card manuscript-card">
+                            <div class="corner-ornaments">
+                                <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            </div>
+                            <div class="contact-icon-wrapper">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </div>
+                            <div class="contact-details">
+                                <h3>GitHub</h3>
+                                <p>Open source projects &amp; codebases</p>
+                            </div>
+                            <a href="https://github.com/SaranshChaudhary17" target="_blank" class="contact-action-btn">
+                                <span>Code</span>
+                                <ion-icon name="open-outline"></ion-icon>
+                            </a>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="contact-item-card manuscript-card">
+                            <div class="corner-ornaments">
+                                <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            </div>
+                            <div class="contact-icon-wrapper">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Instagram</h3>
+                                <p>Creative designs &amp; highlights</p>
+                            </div>
+                            <a href="https://www.instagram.com/saranshchaudhary.17" target="_blank" class="contact-action-btn">
+                                <span>Follow</span>
+                                <ion-icon name="open-outline"></ion-icon>
+                            </a>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="contact-item-card manuscript-card">
+                            <div class="corner-ornaments">
+                                <svg class="corner-ornament top-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament top-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-left" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                                <svg class="corner-ornament bottom-right" viewBox="0 0 40 40" width="10" height="10"><path d="M 0,0 L 40,0 C 20,4 8,16 4,36 L 4,4 Z M 0,0 L 0,40 C 4,20 16,8 36,4 L 4,4 Z" fill="var(--gold-accent)"/><circle cx="8" cy="8" r="2.5" fill="var(--saffron-brown)"/></svg>
+                            </div>
+                            <div class="contact-icon-wrapper">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email Me</h3>
+                                <p>saranshchaudhary1710@gmail.com</p>
+                            </div>
+                            <a href="mailto:saranshchaudhary1710@gmail.com" class="contact-action-btn">
+                                <span>Email</span>
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Banner -->
+            <footer class="pc-footer">
+                <h4 data-translate-key="footer_title">Supporting 24 Indian Languages</h4>
+                <p>Hindi, English, Urdu, Assamese, Bengali, Gujarati, Kannada, Malayalam, Marathi, Nepali, Oriya, Punjabi, Sanskrit, Sindhi, Tamil, Telugu, Konkani, Dogri, Kashmiri, Maithili, Manipuri (Meitei), Santali, Bodo, Santhali</p>
+            </footer>
+
+        </main>
+    </div> <!-- /pc-layout-wrapper -->
+
+    <!-- Load scripts in order -->
     <script src="languages.js"></script>
     <script src="script.js"></script>
 </body>
