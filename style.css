@@ -1934,7 +1934,7 @@ body {
         grid-template-columns: 1fr 1fr;
     }
     /* Email card spans full width on double columns */
-    .contact-grid a:last-child {
+    .contact-grid > .contact-item-card:last-child {
         grid-column: 1 / -1;
     }
 }
@@ -1948,6 +1948,7 @@ body {
     background: rgba(255, 255, 255, 0.45) !important;
     border: 1.5px solid var(--glass-border) !important;
     width: 100%;
+    min-width: 0; /* CRITICAL: prevents grid columns from expanding beyond boundaries */
     box-shadow: 0 4px 15px rgba(166, 91, 38, 0.02);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -1979,6 +1980,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3px;
+    min-width: 0; /* CRITICAL: allows flex item to shrink below content size */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .contact-details h3 {
@@ -2023,4 +2027,26 @@ body {
     border-color: var(--saffron-brown);
     color: #fff;
     transform: scale(1.04);
+}
+
+/* Responsive Overrides for Contact Developer Screen */
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 24px 16px;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+    }
+    
+    .contact-action-btn {
+        width: 100%;
+        margin-top: 4px;
+    }
 }
