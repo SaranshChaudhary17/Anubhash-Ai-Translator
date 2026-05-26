@@ -20,7 +20,7 @@
 - **Manuscript Text Scanning**: Mock viewfinder featuring live glowing corner ornaments, a moving neon scanning laser animation, and a responsive shutter flash.
 - **Auto-Extraction**: Instantly parses and translates classical manuscript text from Sanskrit or Hindi into English.
 
-### 4. 🧭 Heritage Rajput Minimalism UX
+### 4. 🧭 Heritage Minimalism UX
 - **Stationary Glassmorphic Header**: The main header remains perfectly fixed at the top of the viewport on both desktop and mobile screens, featuring backdrop blurs and clean content scrolling offsets.
 - **Manuscript Sheet Cards**: Content is framed within custom-border parchment panels featuring traditional corner ornaments.
 - **Local Cache-Buster Integration**: Standardized query parameters (e.g. `style.css?v=4.1`) prevent aggressive local browser stylesheet caching.
