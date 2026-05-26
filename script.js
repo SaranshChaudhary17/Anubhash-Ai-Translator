@@ -7,6 +7,11 @@ const pcSidebarLinks = document.querySelectorAll(".sidebar-nav .nav-link");
 function navigateToScreen(screenId) {
     if (!screenId) return;
 
+    // Defensively close any active camera feeds on screen transitions
+    if (typeof stopCameraStream === "function") {
+        stopCameraStream();
+    }
+
     // 1. Hide all screens and remove active class
     appScreens.forEach(s => s.classList.remove("active"));
     
@@ -34,6 +39,11 @@ function navigateToScreen(screenId) {
     const mainContentEl = document.querySelector(".main-content");
     if (mainContentEl) {
         mainContentEl.scrollTop = 0;
+    }
+
+    // 6. Request camera access and stream live if opening the camera screen
+    if (screenId === "screen-camera" && typeof startCameraStream === "function") {
+        startCameraStream();
     }
 }
 
@@ -608,6 +618,62 @@ if (voiceChatMicBtn) {
 // ==========================================
 const camEmbeddedView = document.querySelector(".camera-viewfinder-embedded");
 const btnCamScreenCapture = document.getElementById("btn-camera-screen-capture");
+const cameraVideoEl = document.getElementById("camera-video-stream");
+const cameraOverlayEl = document.querySelector(".camera-embedded-overlay");
+
+let cameraStreamObj = null;
+
+async function startCameraStream() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        console.warn("MediaDevices API not supported.");
+        if (cameraOverlayEl) {
+            const textEl = cameraOverlayEl.querySelector("p");
+            if (textEl) textEl.textContent = "Webcam API not supported in this browser.";
+        }
+        return;
+    }
+    
+    try {
+        // Request video stream, preferring back-facing environmental camera on mobile phones
+        const constraints = {
+            video: { facingMode: "environment" }
+        };
+        
+        cameraStreamObj = await navigator.mediaDevices.getUserMedia(constraints);
+        if (cameraVideoEl) {
+            cameraVideoEl.srcObject = cameraStreamObj;
+            cameraVideoEl.style.display = "block";
+            if (cameraOverlayEl) cameraOverlayEl.style.display = "none";
+        }
+    } catch (err) {
+        console.error("Camera access denied or failed:", err);
+        if (cameraVideoEl) cameraVideoEl.style.display = "none";
+        if (cameraOverlayEl) {
+            cameraOverlayEl.style.display = "block";
+            const textEl = cameraOverlayEl.querySelector("p");
+            if (textEl) textEl.textContent = "Camera access denied. Please grant webcam permissions.";
+        }
+    }
+}
+
+function stopCameraStream() {
+    if (cameraStreamObj) {
+        cameraStreamObj.getTracks().forEach(track => track.stop());
+        cameraStreamObj = null;
+    }
+    if (cameraVideoEl) {
+        cameraVideoEl.srcObject = null;
+        cameraVideoEl.style.display = "none";
+    }
+    if (cameraOverlayEl) {
+        cameraOverlayEl.style.display = "block";
+        const textEl = cameraOverlayEl.querySelector("p");
+        if (textEl) textEl.textContent = "Point camera at manuscript / text lines";
+    }
+}
+
+// Guarantee camera releases properly if tab is closed
+window.addEventListener("beforeunload", stopCameraStream);
 
 if (btnCamScreenCapture && camEmbeddedView) {
     btnCamScreenCapture.addEventListener("click", () => {
